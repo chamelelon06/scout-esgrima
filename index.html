@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scouting de Esgrima</title>
+    <!-- Carrega Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+            touch-action: manipulation; /* Melhoria de performance em touchscreens */
+        }
+        /* Estilo para garantir que o dashboard não cause horizontal scrolling */
+        .responsive-table {
+            overflow-x: auto;
+            max-width: 100%;
+        }
+    </style>
+    <!-- Firebase Imports -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, collection, query, limit, getDocs } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        
+        // Expose Firebase modules to the window object for the React app to use
+        window.firebase = {
+            initializeApp,
+            getAuth,
+            signInAnonymously,
+            signInWithCustomToken,
+            onAuthStateChanged,
+            getFirestore,
+            doc,
+            setDoc,
+            collection,
+            query,
+            limit,
+            getDocs
+        };
+        
+        // Define as variáveis globais do ambiente (se existirem)
+        window.__app_id = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+        window.__firebase_config = typeof __firebase_config !== 'undefined' ? __firebase_config : '{}';
+        window.__initial_auth_token = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : undefined;
+    </script>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+<body class="p-4 sm:p-6 pb-20">
+    <div id="root"></div>
+</body>
+</html>

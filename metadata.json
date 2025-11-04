@@ -1,0 +1,5 @@
+{
+  "name": "Fencing Scout Arena",
+  "description": "A web application for real-time fencing match scouting, allowing users to track scores, log actions by zone, and generate post-match reports. The app features a built-in timer and an integrated analysis dashboard.",
+  "requestFramePermissions": []
+}
